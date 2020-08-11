@@ -39,6 +39,7 @@ public class FXMLDocumentController implements Initializable {
     private Button jugar;
     @FXML
     private ImageView fondo;
+    int totalBombas=0;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -52,30 +53,51 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void crearPrincipiante(MouseEvent event) {
         int tamanio = 9;
-        crearTabla(tamanio);
+        totalBombas=13;
+        crearTabla(tamanio,totalBombas);
     }
 
     @FXML
     private void crearIntermedio(MouseEvent event) {
         int tamanio = 16;
-        crearTabla(tamanio);
+        totalBombas=40;
+         crearTabla(tamanio,totalBombas);
     }
 
     @FXML
     private void crearAvanzado(MouseEvent event) {
         int tamanio = 32;
-        crearTabla(tamanio);
+        totalBombas=160;
+         crearTabla(tamanio,totalBombas);
     }
-    public void crearTabla(int tamanio){
+    public void crearTabla(int tamanio,int Bombas){
         Tabla  = new int [tamanio][tamanio];
-        Random random = new Random();
         
-        for (int i = 0; i < Tabla.length; i++) {
-            for (int j = 0; j < Tabla.length; j++) {
-                System.out.print(Tabla[i][j]);
+        Random random = new Random();
+
+
+
+        for (int i = 0; i < Bombas; i++) {
+            int x = random.nextInt(tamanio);
+            int y = random.nextInt(tamanio);
+            if (Tabla[x][y]!=1) {
+                Tabla[x][y] = 1;
+                System.out.println(x+" , "+y);
+            }else{
+                i--;
             }
-            System.out.println("");
+
+            
+
         }
+
+//        for (int i = 0; i < Tabla.length; i++) {
+//
+//            for (int j = 0; j < Tabla.length; j++) {
+//                System.out.print(Tabla[i][j]);
+//            }
+//            System.out.println("");
+//        }
         
         
         
@@ -86,5 +108,6 @@ public class FXMLDocumentController implements Initializable {
         menuInicio.setVisible(false);
         juego.setVisible(true);
         fondo.setVisible(false);
+        
     }
 }   

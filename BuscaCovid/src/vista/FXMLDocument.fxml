@@ -8,41 +8,34 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vista.FXMLDocumentController">
     <children>
-      <Pane fx:id="menuInicio" layoutX="-10.0" layoutY="-1.0" prefHeight="541.0" prefWidth="971.0">
+      <Pane fx:id="menuInicio" layoutX="-10.0" layoutY="-1.0" prefHeight="541.0" prefWidth="971.0" visible="false">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="116.0" layoutY="257.0" onMouseClicked="#crearPrincipiante" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Imagenes/principiante.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="386.0" layoutY="257.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="386.0" layoutY="257.0" onMouseClicked="#crearIntermedio" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Imagenes/Intermedio.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="672.0" layoutY="257.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="672.0" layoutY="257.0" onMouseClicked="#crearAvanzado" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Imagenes/avanzado.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="386.0" layoutY="352.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="386.0" layoutY="352.0" onMouseClicked="#iniciarJuego" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Imagenes/jugar.png" />
                </image></ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="275.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="fondo" fitHeight="640.0" fitWidth="961.0" layoutX="-105.0" layoutY="70.0" pickOnBounds="true" visible="false">
-               <image>
-                  <Image url="@../Imagenes/AdobeStock_333090694.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="386.0" layoutY="368.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </Pane>
-      <Pane fx:id="juego" prefHeight="540.0" prefWidth="961.0" visible="false">
+      <Pane fx:id="juego" prefHeight="540.0" prefWidth="961.0">
          <children>
-            <Pane layoutX="-5.0" prefHeight="89.0" prefWidth="970.0" style="-fx-background-color: gray;" visible="false">
+            <Pane layoutX="-5.0" prefHeight="89.0" prefWidth="970.0" style="-fx-background-color: gray;">
                <children>
                   <Label layoutX="31.0" layoutY="7.0" text="Puntaje:">
                      <font>
@@ -69,9 +62,18 @@
                         <Font size="23.0" />
                      </font>
                   </Label>
+                  <ImageView fitHeight="74.0" fitWidth="332.0" layoutX="337.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Imagenes/titulo.png" />
+                     </image></ImageView>
                </children>
             </Pane>
          </children>
       </Pane>
+      <ImageView fx:id="fondo" fitHeight="640.0" fitWidth="961.0" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@../Imagenes/AdobeStock_333090694.jpg" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>
