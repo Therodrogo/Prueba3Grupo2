@@ -6,6 +6,7 @@
 package vista;
 
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -43,6 +44,9 @@ public class FXMLDocumentController implements Initializable {
         // TODO
         menuInicio.setVisible(true);
         juego.setVisible(false);
+        
+        
+        
     }    
 
     @FXML
@@ -64,6 +68,16 @@ public class FXMLDocumentController implements Initializable {
     }
     public void crearTabla(int tamanio){
         Tabla  = new int [tamanio][tamanio];
+        Random random = new Random();
+        
+        for (int i = 0; i < Tabla.length; i++) {
+            for (int j = 0; j < Tabla.length; j++) {
+                System.out.print(Tabla[i][j]);
+            }
+            System.out.println("");
+        }
+        
+        
         
     }
 
